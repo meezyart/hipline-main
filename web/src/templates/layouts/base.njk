@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include "meta.njk" -%}
+  </head>
+  <body>
+    {% include "header.njk" -%}
+    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+      {{ content | safe }}
+    </main>
+    {% include "footer.njk" -%}
+    <!-- Current page: {{ page.url | url }} -->
+    <script type="text/javascript">
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/serviceworker.js')
+        }
+    </script>
+  </body>
+</html>
