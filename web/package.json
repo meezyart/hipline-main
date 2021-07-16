@@ -11,7 +11,7 @@
         "now-build": "npx eleventy && js-build",
         "debug": "DEBUG=* eleventy",
         "watch:sass": "sass  --no-source-map --watch src/scss:dist/assets/css",
-        "build:sass": "sass  --no-source-map --style=compressed src/scss:dist/assets/css",
+        "build:sass": "sass  --no-source-map src/scss:dist/assets/css",
         "prefix": "postcss dist/assets/css/*.css -u autoprefixer -r",
         "dev": "cross-env ELEVENTY_ENV=development npm-run-all build:sass --parallel watch:*",
         "build": "cross-env ELEVENTY_ENV=production npm-run-all build:sass prefix now-build"

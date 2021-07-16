@@ -11,7 +11,7 @@
     <main class="js-animsition-overlay {%- if templateClass %} {{ templateClass }} {% endif  -%}" data-animsition-overlay="true">
      {%- block content %} {{ content | safe }} {% endblock -%}
     </main>
-    {% include "footer.njk" -%}
+    {# {% include "footer.njk" -%} #}
     <!-- scripts -->
     <!-- Current page: {{ page.url | url }} -->
     <script type="text/javascript">
@@ -23,12 +23,12 @@
     {%- for script in addtionaljs %}
     <script src="{{ script | url }}"></script>
     {%- endfor %}
-    {%- block addtionaljs %}{% endblock %}
+
     <script src="{{ '/assets/js/min.js' | url }}"></script>
     {%- if GA_ID %}
     <script src="{{ '/assets/js/cached.js' | url }}"></script>
     <script src="{{ '/assets/js/web-vitals.js' | url }}"></script>
-    {% endif -%}
-    <script src="{{ '/assets/js/main.js' | url }}"></script>
+    {% endif %}
+    {%- block addtionaljs %}{% endblock %}
   </body>
 </html>
